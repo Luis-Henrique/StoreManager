@@ -92,6 +92,9 @@ Providers - Name, E-mail, Number
 ## Contact
 
 cardoso.gomes@aluno.ifsp.edu.br
+isabella.cardoso@aluno.ifsp.edu.br
+isabelle.pimenta@aluno.ifsp.edu.br
+furquim.julia@aluno.ifsp.edu.br
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
