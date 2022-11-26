@@ -11,7 +11,7 @@ public class Collaborators
 
     [Required(ErrorMessage = "Preencha o campo Cargo")]
     [StringLength(20, ErrorMessage = "O campo Cargo pode ter no máximo 20 caracteres")]
-    public String? Function { get; set; }
+    public String? _Function { get; set; }
 
     [Required(ErrorMessage = "Preencha o campo Gênero")]
     [StringLength(15, ErrorMessage = "O campo Gênero pode ter no máximo 15 caracteres")]
@@ -26,7 +26,7 @@ public class Collaborators
     {
         Id = id;
         Name = name;
-        Function = function;
+        _Function = function;
         Gender = gender;
     }
 }

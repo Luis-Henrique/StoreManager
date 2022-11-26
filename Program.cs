@@ -1,7 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using StoreManager.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<StoreManagerContext>(options => options.UseMySQL("server=StoreManager;database=StoreManager;user=root;password=xxxx;"));
 
 var app = builder.Build();
 

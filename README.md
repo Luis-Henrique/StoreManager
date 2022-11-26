@@ -66,6 +66,10 @@ Project created for the IFSP in the school subject of LP3. The system was based 
    ```sh
    dotnet add package MySql.EntityFrameworkCore --version 6.0.4
    ```
+3. create the database with the code in the repository
+   ```sh
+   DB.txt
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,6 +85,8 @@ Collaborators - Name, Function, Gender
 Clients = Name, Gender, E-mail, Number
 <br>
 Stores - Name, Address
+<br>
+Providers - Name, E-mail, Number
 
 <!-- CONTACT -->
 ## Contact

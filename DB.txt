@@ -1,0 +1,52 @@
+CREATE DATABASE storemanager;
+
+CREATE TABLE Clients (
+    id int NOT NULL AUTO_INCREMENT,
+    Name varchar(255),
+    Gender varchar(255),
+    Email varchar(255),
+	Number varchar(255),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE Collaborators (
+    id int NOT NULL AUTO_INCREMENT,
+    Name varchar(255),
+    _Function varchar(255),
+    Gender varchar(255),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE Inventories (
+    id int NOT NULL AUTO_INCREMENT,
+    Address varchar(255),
+    Capacity int,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE Products (
+    id int NOT NULL AUTO_INCREMENT,
+    Name varchar(255),
+    Description varchar(255),
+    Price int,
+    Active bool,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE Providers (
+    id int NOT NULL AUTO_INCREMENT,
+    Name varchar(255),
+    Email varchar(255),
+	Number varchar(255),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE Stores (
+    id int NOT NULL AUTO_INCREMENT,
+    Name varchar(255),
+	Address varchar(255),
+    PRIMARY KEY (id)
+);
+
+
+
