@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using StoreManager.Models;
 
-namespace StoreManager.Controllers;
+namespace TwoFootball.Controllers;
 
 public class HomeController : Controller
 {
