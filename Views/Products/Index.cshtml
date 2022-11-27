@@ -1,7 +1,41 @@
+@model IEnumerable<StoreManager.Models.Products>
 @{
     ViewData["Title"] = "Produtos";
 }
+<h1>@ViewData["Title"]</h1>
 
-<div class="text-center">
-    <h1>xxxxxx</h1>
-</div>
+@if(Model.Count() == 0)
+{
+    <p>Nenhum produto cadastrado</p>
+    <a class="btn btn-outline-dark" asp-controller="Products" asp-action="Add">Cadastre um novo produto</a>
+}
+else
+{
+    <table class="table table-white">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var product in Model)
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>@product.Price</td>
+                    <td>
+                        <a class="btn btn-outline-info" asp-controller="Products" asp-action="Show" asp-route-id="@product.Id">Ver</a>
+                        <a class="btn btn-outline-warning" asp-controller="Products" asp-action="Update" asp-route-id="@product.Id">Update</a>
+                        <a class="btn btn-outline-danger" asp-controller="Products" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a class="btn btn-outline-dark" asp-controller="Products" asp-action="Add">Cadastre um novo produto</a>
+}

@@ -1,7 +1,38 @@
+@model IEnumerable<StoreManager.Models.Stores>
 @{
-    ViewData["Title"] = "Lojas";
+    ViewData["Title"] = "Inventários";
 }
+<h1>@ViewData["Title"]</h1>
 
-<div class="text-center">
-    <h1>xxxxxx</h1>
-</div>
+@if(Model.Count() == 0)
+{
+    <p>Nenhuma loja cadastrado</p>
+    <a class="btn btn-outline-dark" asp-controller="Stores" asp-action="Add">Cadastre uma nova loja</a>
+}
+else
+{
+    <table class="table table-white">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Endereço</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var store in Model)
+            {
+                <tr>
+                    <td>@store.Id</td>
+                    <td>@store.Name</td>
+                    <td>@store.Address</td>
+                    <td>
+                        <a class="btn btn-outline-info" asp-controller="Stores" asp-action="Show" asp-route-id="@store.Id">Ver</a>
+                        <a class="btn btn-outline-warning" asp-controller="Stores" asp-action="Update" asp-route-id="@store.Id">Update</a>
+                        <a class="btn btn-outline-danger" asp-controller="Stores" asp-action="Delete" asp-route-id="@store.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a class="btn btn-outline-dark" asp-controller="Stores" asp-action="Add">Cadastre uma nova loja</a>
+}

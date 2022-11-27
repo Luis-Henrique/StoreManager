@@ -1,7 +1,41 @@
+@model IEnumerable<StoreManager.Models.Providers>
 @{
-    ViewData["Title"] = "Fornecedores";
+    ViewData["Title"] = "Lojas";
 }
+<h1>@ViewData["Title"]</h1>
 
-<div class="text-center">
-    <h1>xxxxxx</h1>
-</div>
+@if(Model.Count() == 0)
+{
+    <p>Nenhum fornecedor cadastrado</p>
+    <a class="btn btn-outline-dark" asp-controller="Providers" asp-action="Add">Cadastre um novo fornecedor</a>
+}
+else
+{
+    <table class="table table-white">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Número</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var provider in Model)
+            {
+                <tr>
+                    <td>@provider.Id</td>
+                    <td>@provider.Name</td>
+                    <td>@provider.Email</td>
+                    <td>@provider.Number</td>
+                    <td>
+                        <a class="btn btn-outline-info" asp-controller="Providers" asp-action="Show" asp-route-id="@provider.Id">Ver</a>
+                        <a class="btn btn-outline-warning" asp-controller="Providers" asp-action="Update" asp-route-id="@provider.Id">Update</a>
+                        <a class="btn btn-outline-danger" asp-controller="Providers" asp-action="Delete" asp-route-id="@provider.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a class="btn btn-outline-dark" asp-controller="Providers" asp-action="Add">Cadastre um novo fornecedor</a>
+}

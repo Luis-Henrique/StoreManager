@@ -1,0 +1,17 @@
+@model StoreManager.Models.Stores
+@{
+    ViewData["Title"] = "Atualizar Loja";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form class="form" asp-controller="Stores" asp-action="Update" asp-route-id="@Model.Id" method="POST">    
+    <label for="Name">Nome: </label>
+    <input type="text" id="Name" name="Name" asp-for="@Model.Name">
+    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+
+    <label for="Address">Endereço: </label>
+    <input type="text" id="Address" name="Address" asp-for="@Model.Address">
+    <span asp-validation-for="@Model.Address" class="text-danger"></span>
+    
+    <input class="submit" type="submit" value="Atualizar">
+</form>
