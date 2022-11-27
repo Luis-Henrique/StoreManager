@@ -1,0 +1,9 @@
+@model StoreManager.Models.Inventories
+@{
+    ViewData["Title"] = $"Inventários {Model.Id}";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p><b>Id: </b>@Model.Id</p>
+<p><b>Endereço: </b>@Model.Address</p>
+<p><b>Capacidade de produtos: </b>@Model.Capacity</p>

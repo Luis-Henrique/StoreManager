@@ -1,0 +1,11 @@
+@model StoreManager.Models.Clients
+@{
+    ViewData["Title"] = $"Cliente {Model.Id}";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p><b>Id: </b>@Model.Id</p>
+<p><b>Nome: </b>@Model.Name</p>
+<p><b>Gênero: </b>@Model.Gender</p>
+<p><b>E-mail: </b>@Model.Email</p>
+<p><b>Número: </b>@Model.Number</p>

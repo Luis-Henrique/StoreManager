@@ -1,0 +1,10 @@
+@model StoreManager.Models.Collaborators
+@{
+    ViewData["Title"] = $"Colaboradores {Model.Id}";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p><b>Id: </b>@Model.Id</p>
+<p><b>Nome: </b>@Model.Name</p>
+<p><b>Cargo: </b>@Model._Function</p>
+<p><b>Gênero: </b>@Model.Gender</p>

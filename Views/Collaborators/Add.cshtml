@@ -1,0 +1,21 @@
+@model StoreManager.Models.Collaborators
+
+@{
+    ViewData["Title"] = "Cadastro de Colaboradores";
+}
+
+<form class="form" id="form" asp-controller="Collaborators" asp-action="Add" method="POST">
+    <label for="Name">Nome: </label>
+    <input type="text" id="Name" name="Name" asp-for="@Model.Name">
+    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+
+    <label for="_Function">Cargo: </label>
+    <input type="text" id="_Function" name="_Function" asp-for="@Model._Function">
+    <span asp-validation-for="@Model._Function" class="text-danger"></span>
+
+    <label for="Gender">Gênero: </label>
+    <input type="text" id="Gender" name="Gender" asp-for="@Model.Gender">
+    <span asp-validation-for="@Model.Gender" class="text-danger"></span>
+
+    <input type="submit" value="Cadastrar">
+</form>

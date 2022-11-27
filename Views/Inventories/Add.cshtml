@@ -1,0 +1,17 @@
+@model StoreManager.Models.Inventories
+
+@{
+    ViewData["Title"] = "Cadastro de Inventário";
+}
+
+<form class="form" id="form" asp-controller="Inventories" asp-action="Add" method="POST">
+    <label for="Address">Endereço: </label>
+    <input type="text" id="Address" name="Address" asp-for="@Model.Address">
+    <span asp-validation-for="@Model.Address" class="text-danger"></span>
+
+    <label for="Capacity">Capacidade de produtos: </label>
+    <input type="number" id="Capacity" name="Capacity" asp-for="@Model.Capacity">
+    <span asp-validation-for="@Model.Capacity" class="text-danger"></span>
+
+    <input type="submit" value="Cadastrar">
+</form>
